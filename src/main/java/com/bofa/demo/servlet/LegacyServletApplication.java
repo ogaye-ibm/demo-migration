@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ServletMigrationApplication {
+public class LegacyServletApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ServletMigrationApplication.class, args);
+        SpringApplication.run(LegacyServletApplication.class, args);
     }
 
 

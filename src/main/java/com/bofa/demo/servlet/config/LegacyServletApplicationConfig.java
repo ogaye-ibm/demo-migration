@@ -2,6 +2,7 @@ package com.bofa.demo.servlet.config;
 
 import com.bofa.demo.servlet.controller.LegacyServlet;
 import com.bofa.demo.servlet.listener.LegacyListener;
+import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.http.HttpSessionListener;
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -9,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class ServletAppConfig {
+public class LegacyServletApplicationConfig {
 
     @Bean
     public ServletRegistrationBean<LegacyServlet> legacyServletBean() {
@@ -19,20 +20,22 @@ public class ServletAppConfig {
         srbean.addUrlMappings("/legacy-servlet");
 
         return srbean;
-        //return ServletRegistrationBean bean = new ServletRegistrationBean(new LegacyServlet(), "/legacy-servlet");
+        //or just return ServletRegistrationBean bean = new ServletRegistrationBean(new LegacyServlet(), "/legacy-servlet");
     }
 
     @Bean
     public ServletListenerRegistrationBean<HttpSessionListener> legacyServletHttpListenerBean() {
-        ServletListenerRegistrationBean<HttpSessionListener> bean = new ServletListenerRegistrationBean();
+        /*ServletListenerRegistrationBean<HttpSessionListener> bean = new ServletListenerRegistrationBean();
         bean.setListener(new LegacyListener());
-        return bean;
+        return bean;*/
+        return new ServletListenerRegistrationBean<HttpSessionListener>(new LegacyListener());
     }
 
-    /* @Bean
+    @Bean
      public ServletListenerRegistrationBean<ServletContextListener> legacyServletListenerBean() {
          ServletListenerRegistrationBean<ServletContextListener> bean = new ServletListenerRegistrationBean();
          bean.setListener(new LegacyListener());
          return bean;
-     }*/
+     }
+
 }
