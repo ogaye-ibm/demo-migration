@@ -6,6 +6,7 @@ import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.http.HttpSessionListener;
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -21,6 +22,14 @@ public class LegacyServletApplicationConfig {
 
         return srbean;
         //or just return ServletRegistrationBean bean = new ServletRegistrationBean(new LegacyServlet(), "/legacy-servlet");
+    }
+
+    @Bean
+    public FilterRegistrationBean<LegacyFilter> loggingFilter() {
+        FilterRegistrationBean<LegacyFilter> registrationBean = new FilterRegistrationBean<>();
+        registrationBean.setFilter(new LegacyFilter());
+        registrationBean.addUrlPatterns("/legacy-servlet");
+        return registrationBean;
     }
 
     @Bean
