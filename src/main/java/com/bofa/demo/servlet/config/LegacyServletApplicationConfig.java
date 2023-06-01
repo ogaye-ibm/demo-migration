@@ -2,6 +2,7 @@ package com.bofa.demo.servlet.config;
 
 import com.bofa.demo.servlet.controller.LegacyServlet;
 import com.bofa.demo.servlet.listener.LegacyListener;
+import com.bofa.demo.servlet.filter.LegacyFilter;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.http.HttpSessionListener;
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
