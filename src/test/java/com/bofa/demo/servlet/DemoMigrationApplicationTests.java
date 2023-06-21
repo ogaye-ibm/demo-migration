@@ -1,4 +1,4 @@
-package com.example.demomigration;
+package com.bofa.demo.servlet;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
