@@ -1,0 +1,94 @@
+ibm-product.txt
+
+https://www.redbooks.ibm.com/redpapers/pdfs/redp5209.pdf
+
+https://www.ibm.com/cloud/blog/announcements/websphere-v905-whats-new-faq
+
+Transformation Advisor is included with IBM WebSphere Hybrid, and CP4I, it can be obtained as a stand-alone product as well (refer to http://ibm.biz/cloudta)
+https://ibm.box.com/v/TAin9minutes
+
+IBM WebSphere Edition https://www.ibm.com/products/websphere-hybrid-edition
+https://www.ibm.com/products/cloud-pak-for-integration
+
+Transformation Advisor can help you with your transformation journey in these areas:
+
+    Assessment
+        Applications evaluated based on business needs
+        High-level inventory of application content and structure
+        Potential issues and migration complexity assessments
+
+    Strategic Planning
+        Identification of key applications that require replacement or upgrade
+        Estimated effort for resolving migration issues
+        Recommendations for a modernization path
+
+    Execution
+        Migration bundle automatically generated to assist with containerization and deployment
+        Files that are included are tailored to your applications
+        Dependencies identified to help you to complete the bundle
+
+WebSphere ND Cluster Migration 
+
+WebSphere Application Server:
+ WebSphere ND 
+ WebSphere base 
+ Liberty Core 
+ Open Liberty
+zOS
+
+
+ibm.biz/6ReasonsWhyLiberty
+
+
+Provides recommendations, detailed reports, artifacts and automates deployment for simple application modernization
+
+analysis  report
+Potential issues, severity, possible solutions and estimate of resolution effort
+Technology Report
+Details on IBM platform support for technologies used in the app
+Inventory Report
+High-level inventory of application content and structure
+Customized application configuration and deployment files
+
+Liberty
+Tiny kernel with pluggable features (jsf, jsp, http, servlet, security), Composable Java EE technologies 
+Component reuse from tWAS provides
+Common behavior for applications
+common performance profiles (throughput)
+
+Small footprint (< 54MB), quick startup (< 3 sec)
+Developer-first design of simple, shareable XML configuration
+Dynamic runtime and configuration
+
+Lightweight
+Composable (architecture)
+Simple
+Flexible
+Dynamic
+Open & Extensible
+Cloud-ready
+
+Open Libery:
+Open-Source (Upstream) Implementation of WebSphere Liberty 
+Introduced September 2017 
+
+
+WAS Network Deployment
+ A runtime environment for large-scale and mission-critical application deployments, offers near continuous availability and intelligent management capabilities.
+WebSphere Application Server
+ Flexible, secure Java server runtime environment for enterprise applications, provides advanced performance, redundancy and programming models.
+WAS Liberty Core
+ Lightweight production runtime for rapid web and cloud-based application development and deployment.
+
+ IBM WebSphere Liberty is a next-generation application runtime that accelerates the delivery of cloud-native applications,
+
+•	WebSphere Application Server Express 
+•	OK WebSphere Application Server Base 
+•	OK WebSphere Application Server Network Deployment 
+•	WebSphere Application Server for IBM z/OS® 
+•	WebSphere Application Server for Developers 
+•	WebSphere Application Server Hypervisor Edition 
+•	OK WebSphere Application Server Liberty Core 
+•	WebSphere Application Server Community Edition 
+
+https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_stabfeat.html
