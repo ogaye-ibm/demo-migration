@@ -1,0 +1,25 @@
+<mxfile host="app.diagrams.net" modified="2023-07-31T18:04:52.096Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/115.0" etag="BI0qNnpXcnw8fu0rC-A5" version="21.6.6">
+  <diagram name="Page-1" id="ioXnzGbJQiDMqy2hE1-l">
+    <mxGraphModel dx="884" dy="574" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RcMVb_RBoL7-X7_b-E7N-1" value="&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Base Image&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Allows only to execute&amp;nbsp;&lt;/div&gt;&lt;div&gt;the compiled program.&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66B2FF;" vertex="1" parent="1">
+          <mxGeometry x="18" y="160" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RcMVb_RBoL7-X7_b-E7N-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0000FF;strokeWidth=3;" edge="1" parent="1" source="RcMVb_RBoL7-X7_b-E7N-3" target="RcMVb_RBoL7-X7_b-E7N-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RcMVb_RBoL7-X7_b-E7N-3" value="&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Parent Image&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Allows only to execute&amp;nbsp;&lt;/div&gt;&lt;div&gt;the compiled program.&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66B2FF;" vertex="1" parent="1">
+          <mxGeometry x="258" y="160" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RcMVb_RBoL7-X7_b-E7N-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0000FF;strokeWidth=3;" edge="1" parent="1" source="RcMVb_RBoL7-X7_b-E7N-4" target="RcMVb_RBoL7-X7_b-E7N-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RcMVb_RBoL7-X7_b-E7N-4" value="&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Application Image&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Contains the source code &lt;br&gt;&lt;/div&gt;&lt;div&gt;of your app and executes it.&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66B2FF;" vertex="1" parent="1">
+          <mxGeometry x="497" y="160" width="200" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
