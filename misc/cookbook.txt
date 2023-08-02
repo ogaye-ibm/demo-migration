@@ -1,0 +1,83 @@
+S2I algo:
+1. OpenShift accesses the URL as a container registry URL. If this succeeds, there is no need to create a build configuration. OpenShift creates the deployment configuration and other resources required to deploy a container image.
+2. If the URL points to a Git repository, OpenShift retrieves a file list from the repository and searches for a Dockerfile file. If found, the build configuration uses a docker strategy. Otherwise, the build configuration uses a source strategy, which needs an S2I builder image.
+3. OpenShift searches for image streams that match the language builder name as the value of the supports annotation. The first match becomes the S2I builder image.
+4. If no annotation matches, OpenShift searches for an image stream whose name matches the language builder name. The first match becomes the S2I builder image.
+
+The oc new-app command can use a range of command- line options to force a particular choice. 
+
+The programming language detection feature relies on finding specific file names at the root of the Git repository
+
+OpenShift follows a multistep algorithm to determine if the URL points to a source code repository and if so which builder image should perform the build. The following is a simplified description of the algorithm:
+
+Thisoc command identifies that you are referring to a registry URL and it starts the container deployment:
+oc new-app --as-deployment-config registry.access.redhat.com/ubi8/ ubi:8.0
+
+This oc command identifies that you are
+using a Git repository and it is going to clone the repository to look for a Dockerfile file. If the OpenShift cluster finds a Dockerfile file in the root directory of the repository, then it triggers a new container build process.
+oc new-app --as-deployment-config https://github.com/RedHatTraining/DO288-apps/ubi-echo
+
+To force the use of a certain image stream, you can use the -i option for a PHP 7.3 application:
+oc new-app --as-deployment-config -i php:7.3 https://github.com/RedHatTraining/DO288-apps/php-helloworld
+
+
+docker container run -d -p 7000:7001 -p 9001:9002 -it --name wlsnode01 -v /apps/docker/oracle-weblogic:/u01/oracle/properties container-registry.oracle.com/middleware/weblogic:14.1.1.0-11
+
+S2I scripts
+assemble:
+The assemble script builds the application from source and places it into appropriate directories inside the image.
+run:
+The run script executes your application. It is recommended to use the exec command when running any container processes in your run script. This ensures signal propagation and graceful shutdown of any process launched by the run script.
+
+
+
+The Source-to-Image (S2I) Build Process
+The S2I build process involves three fundamental components, which are combined to create a final container image:
+Application source code
+This is the source code for the application.
+S2I scripts
+S2I scripts are a set of scripts that the OpenShift build process executes to customize the S2I builder image. S2I scripts can be written in any programming language, as long as the scripts are executable inside the S2I builder image.
+The S2I builder image
+This is a container image that contains the required runtime environment for the application. It typically contains compilers, interpreters, scripts, and other dependencies that are needed to run the application.
+
+Overriding S2I Builder Scripts
+S2I builder images provide default S2I scripts. You can override the default S2I scripts to change how your application is built and executed. You can override the default build behavior without needing to create a new S2I builder image by forking the source code for the original S2I builder.
+The simplest way to override the default S2I scripts for an application is to include your S2I scripts in the source code repository for your application. You can provide S2I scripts in the .s2i/bin folder of the application source code repository.
+When OpenShift starts the S2I process, it inspects the source code folder, the custom S2I scripts, and the application source code. OpenShift includes all of these files in the tar file injected into the S2I builder image. OpenShift then executes the custom assemble script instead of the default assemble script included with the S2I builder, followed by the other overridden custom scripts (if any).
+
+References
+How to override S2I builder scripts https://blog.openshift.com/override-s2i-builder-scripts/
+How to Create an S2I Builder Image
+https://blog.openshift.com/create-s2i-builder-image/
+Source-to-Image (S2I) Tool
+https://github.com/openshift/source-to-image
+s2i command line interface
+https://github.com/openshift/source-to-image/blob/master/docs/cli.md
+Further information about build environment variables from the standard OpenShift S2I builder images is available in the Images guide, in the documentation for
+Red Hat OpenShift Container Platform 4.5; at https://access.redhat.com/documentation/en-us/ openshift_container_platform/4.5/html-single/images/
+
+References
+Further information is available in the Creating Images chapter of the Images guide for Red Hat OpenShift Container Platform 4.5 at https://access.redhat.com/documentation/en-us/ openshift_container_platform/4.5/html-single/images/index#creating-images
+How to override S2I builder scripts
+https://blog.openshift.com/override-s2i-builder-scripts
+
+Further information about custom build images and build input sources is available in the Creating Build Inputs chapter of the Builds guide for Red Hat OpenShift Container Platform 4.5; at
+https://access.redhat.com/documentation/en-us/ openshift_container_platform/4.5/html/builds/creating-build-inputs
+Source versus binary S2I builds are explained in more detail at
+https://developers.redhat.com/blog/2018/09/26/source-versus-binary-s2i- workflows-with-red-hat-openshift-application-runtimes/
+
+com.bea.*
+com.oracle.*
+org.glasfish.*
+jakarta.*
+javax.*
+org.jboss.*
+weblogic.*
+jms*
+
+
+0
+https://stackoverflow.com/questions/56537151/why-does-spring-boot-not-support-jsp-while-it-can-render-the-page-if-we-add-prop
+ Embedded Tomcat package (which is used in springboot to create executable jar)does not include JSP by default, we must add the module “org.apache.tomcat.embed:tomcat-embed-jasper”
+
+ If you choose to use JSP. As it turns out, Java servlet containers—including embedded Tomcat and Jetty containers—usually look for JSPs somewhere under /WEB-INF. But if you’re building your application as an executable JAR file, there’s no way to satisfy that requirement. Therefore, JSP is only an option if you’re building your application as a WAR file and deploying it in a traditional servlet container. If you’re building an executable JAR file, you must choose Thymeleaf, FreeMarker, or one of the other options

@@ -1,0 +1,12 @@
+FROM python:3.11-slim
+
+WORKDIR /work
+ADD playbook.yml .
+
+RUN pip install pip --upgrade
+RUN pip install ansible
+
+
+
+CMD ["ansible-playbook", "playbook.yml"]
+
